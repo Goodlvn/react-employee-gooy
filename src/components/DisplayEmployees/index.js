@@ -6,13 +6,15 @@ export default function DisplayEmployees() {
 
     const { state, setState } = useEmployeeContext();
 
-    const empRow = state.map( emp => <EmpRow key={emp.id} url={emp.picture}/>)
+    const empRow = state.map( emp => <EmpRow key={emp.id} url={emp.picture} fullName={emp.firstname + " " + emp.lastname}/>)
 
 
 
     return (
-        <div>
-           {empRow}
-        </div>
+        <table>
+            <tbody>
+                {empRow}
+            </tbody>
+        </table>
     )
 }
