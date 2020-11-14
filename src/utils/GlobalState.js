@@ -15,7 +15,7 @@ const reducer = (state, action) => {
 const EmpProvider = ({value = [], ...props }) => {
     const [state, dispatch] = useReducer(reducer, { employees: value })
 
-    return <Provider value={[state,dispatch]} {...props} />
+    return <Provider value={[state, dispatch]} {...props} />
 }
 
 const useEmpContext = () => {

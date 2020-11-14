@@ -1,25 +1,23 @@
-import React, { useEffect } from "react";
+import React from "react";
 import DisplayContainer from "./components/DisplayContainer"
-import API from "./utils/API";
+import { EmpProvider } from "./utils/GlobalState";
 import './styles/App.css';
 
 function App() {
 
-  useEffect(() => {
-    // setLoading(true);
-    API.grabEmployees()
-        .then(({ data }) => {
-          const empList = data.data;
 
-          console.log(empList);
-        })
-        .catch(console.error)
-}, []);
+
+
 
   return (
-    <div className="App">
-      <DisplayContainer />
-    </div>
+
+      <div className="App">
+        <EmpProvider>
+          <DisplayContainer />
+        </EmpProvider>
+      </div>
+
+
   );
 }
 
