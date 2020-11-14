@@ -30,7 +30,10 @@ export default function DisplayContainer() {
        const data = API.grabEmployees();
 
        data.forEach(person => {
-           console.log(person);
+                dispatch({
+                    type: "load",
+                    name: person.firtName
+                })
        })
 
 

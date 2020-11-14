@@ -6,6 +6,16 @@ const EmpContext = createContext({
 });
 const { Provider } = EmpContext;
 
+
+const data = API.grabEmployees();
+
+data.forEach(person => {
+         dispatch({
+             type: "load",
+             name: person.firtName
+         })
+})
+
 function reducer(state, action) {
     switch(action.type) {
         case "load":
