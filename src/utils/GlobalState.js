@@ -1,19 +1,28 @@
 import React, { createContext, useReducer, useContext } from "react";
 
-const EmpContext = createContext();
+const EmpContext = createContext({
+    id: "",
+    name: ""
+});
 const { Provider } = EmpContext;
 
-const reducer = (state, action) => {
+function reducer(state, action) {
     switch(action.type) {
         case "load":
-            return [...state, ]
+            return [
+                ...state, 
+            {
+                id: state.length * Math.random(),
+                name: action.name
+            }
+        ];
         default: 
         console.log("Its working");
     }
 }
 
 const EmpProvider = ({value = [], ...props }) => {
-    const [state, dispatch] = useReducer(reducer, { employees: value })
+    const [state, dispatch] = useReducer(reducer, [])
 
     return <Provider value={[state, dispatch]} {...props} />
 }

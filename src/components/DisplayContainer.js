@@ -11,17 +11,31 @@ export default function DisplayContainer() {
 
     useEffect(() => {
         loadEmployees();
-     }, []);
+    })
 
     function loadEmployees() {
-        API.grabEmployees()
-        .then(({ data }) => {
-          const empList = data.data;
+        // API.grabEmployees()
+        // .then((data ) => {
+        //   const empList = data;
       
-          empList.forEach(person => console.log(person));
-        })
-        .catch(console.error)
-      }
+        //   empList.forEach(person => {
+        //         dispatch({
+        //             type: "load",
+        //             name: person.firstName
+        //         });
+        //   });
+        // })
+        // .catch(console.error)
+
+       const data = API.grabEmployees();
+
+       data.forEach(person => {
+           console.log(person);
+       })
+
+
+    }
+
 
     return (
         <div>
