@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const queryUrl = "https://randomuser.me/api/?results=5";
+const queryUrl = "https://randomuser.me/api/?results=10";
 
 export default {
     getEmployeeData: () => {

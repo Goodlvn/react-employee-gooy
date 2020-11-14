@@ -8,8 +8,9 @@ export default function EmployeePage() {
 
     const { state, setState } = useEmployeeContext();
 
-
+    if(state.length > 0) {
         console.log(state);
+    }
 
     return (
         <div>
