@@ -1,14 +1,13 @@
 import React from 'react'
+import './style.css';
+
 
 export default function EmpRow(props) {
-
-    // let emailLink = "mailto:" + props.email
-
 
     return (
         <tr>
             <td>
-                <img src={props.url} />
+                <img src={props.url} alt={props.fullName} />
             </td>
             <td>
                 <p>{props.fullName}</p>
@@ -21,4 +20,4 @@ export default function EmpRow(props) {
             </td>
         </tr>
     )
-}
+};

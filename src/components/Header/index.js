@@ -3,7 +3,7 @@ import React from 'react'
 export default function index() {
     return (
         <div>
-            <input placeholder={"Search..."}/>
+            THIS IS A HUGE HEADER 
         </div>
     )
 }

@@ -1,6 +1,7 @@
 import React from 'react'
 import EmpRow from "../EmpRow";
 import { useEmployeeContext } from "../../utils/GlobalState";
+import "./style.css"
 
 export default function DisplayEmployees() {
 
@@ -12,6 +13,14 @@ export default function DisplayEmployees() {
 
     return (
         <table>
+            <thead>
+                <tr className="title">
+                    <td>Image</td>
+                    <td>Name</td>
+                    <td>Phone</td>
+                    <td>Email</td>
+                </tr>
+            </thead>
             <tbody>
                 {empRow}
             </tbody>
